@@ -1,0 +1,43 @@
+<main role="main">
+  <div class="jumbotron">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <input
+              type="search"
+              name="query"
+              [(ngModel)]="query"
+              placeholder="Search"
+              class="form-control"
+            >
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <select
+            class="form-control"
+            name="exampleFormControlSelect1"
+            [(ngModel)]="searchBy"
+          >
+            <option
+              *ngFor="let type of searchList"
+              [value]="type.value"
+            >{{type.label}}</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <app-results [items]="response"></app-results>
+  </div>
+
+  <app-spinner *ngIf="loading"></app-spinner>
+</main>

@@ -1,0 +1,22 @@
+<div
+  *ngFor="let item of items"
+  class="row mt-5"
+>
+  <div class="col-8">
+    <div class="media">
+      <img
+        *ngIf="item.strDrinkThumb"
+        [src]="item.strDrinkThumb+'/preview'"
+        class="mr-3"
+        width="100"
+        height="100"
+      >
+      <div class="media-body">
+        <h5 class="mt-0">{{item.strDrink || item.strIngredient1 || item.strCategory}}</h5>
+        {{item.strInstructions}}
+      </div>
+    </div>
+  </div>
+</div>
+
+

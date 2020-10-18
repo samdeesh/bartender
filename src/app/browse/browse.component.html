@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-1">
+      Browse by:
+    </div>
+    <div class="col-sm-6 col-md-2">
+      <select
+        class="form-control"
+        name="exampleFormControlSelect1"
+        [(ngModel)]="listBy"
+        (ngModelChange)="getList()"
+      >
+        <option
+          *ngFor="let item of list"
+          [value]="item.value"
+        >{{item.label}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <app-results [items]="response"></app-results>
+  <p *ngIf="!loading && !response">Data not loaded</p>
+</div>
+<app-spinner *ngIf="loading"></app-spinner>
