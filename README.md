@@ -1,6 +1,9 @@
 # Bartender
+This is a basic demo using api from [CocktailDb](https://www.thecocktaildb.com/api.php)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+
+Clone the project and Run `npm i` for  setup. This was build using Angular CLI: 10.1.7
 
 ## Development server
 
